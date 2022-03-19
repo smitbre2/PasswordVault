@@ -117,21 +117,12 @@ namespace PasswordVault
             // Load document into memory object and load into the data table
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load("Vault.xml");
-            XmlNode elem = xmlDoc.SelectSingleNode("/User/Logins");
 
-            // Check if decryption is even needed
-            if (elem != null ) 
-            {
-                Console.WriteLine("Logins node was found before decryption. Most likely is first start");
-                return;
-            }
-
-            // Decrypt
-            AES.Decrypt(xmlDoc, KEY_WRAPPER.GetKey(MFK));
+            // Generate aes and Decrypt
+            var aes = KEY_WRAPPER.GetKey(MFK);
+            AES.Decrypt(xmlDoc, aes);
 
             // Try and find the login information to add to table
-            xmlDoc.Load("Vault.xml");
-
             var node = xmlDoc.SelectNodes("/User/Logins/Login"); 
             for (int i = 0; i < node.Count; i++)
             {
@@ -144,6 +135,8 @@ namespace PasswordVault
                 // Add on the i'th login information to the table
                 dataGridView1.Rows.Add(str);
             }
+            AES.Encrypt(xmlDoc, "User", aes);
+            aes.Clear();
         }
 
 

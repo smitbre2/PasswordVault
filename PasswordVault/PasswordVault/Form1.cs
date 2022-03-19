@@ -39,12 +39,14 @@ namespace PasswordVault
 
         }
 
+
         // This is the click event for the initial lock Screen (This form) password input
         private void button1_Click(object sender, EventArgs e)
         {
             // Authenticate the login credentials
             if ( KEY_WRAPPER.AuthLogin(textBox1.Text) )
             {
+                Console.WriteLine("Good password");
                 // Open next form password is good
                 this.Hide();
                 MFK = textBox1.Text;
@@ -68,10 +70,17 @@ namespace PasswordVault
         // Called at form closing to save and encrypt the new vault entries from the dgv into vault.xml
         private void SaveDataFromDGV(DataGridView dgv)
         {
-            // Now open text
+            Aes aes = KEY_WRAPPER.GetKey(MFK);
             XDocument xmlDoc = XDocument.Load("Vault.xml");
+
+            // Now open text
+            AES.Decrypt(ConvertToXMLDocument(xmlDoc), aes);
+
+            // Reopen since the handle as technically been closed. This open statement must be here
+            xmlDoc = XDocument.Load("Vault.xml");
             XElement workElem = xmlDoc.Element("User").Element("Logins");   // Index to replace
-            
+
+
             // Out with old in with new
             xmlDoc.Descendants("Logins").Descendants().Remove();
   
@@ -107,8 +116,9 @@ namespace PasswordVault
 
             // Call encrypt
             AES.Encrypt(ConvertToXMLDocument(xmlDoc),
-                          "Logins",
-                          KEY_WRAPPER.GetKey(MFK));
+                          "User",
+                          aes);
+            aes.Clear();
         }
        
 
@@ -143,9 +153,11 @@ namespace PasswordVault
             root.Add(wf);
             root.Add(logins);
             xmlDoc.Add(root);
-            
+
             // Save file
-            xmlDoc.Save("Vault.xml");
+            AES.Encrypt(ConvertToXMLDocument(xmlDoc),
+                        "User",
+                        KEY_WRAPPER.GetKey(userOutput));
         }
 
        

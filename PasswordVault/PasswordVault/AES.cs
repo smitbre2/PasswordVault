@@ -17,10 +17,10 @@ class AES
     public bool AuthLogin(string pass)
     {
         Console.WriteLine(path);
-        Aes AES = null;
+        Aes aes = null;
 
         // Create a new AES key.
-        AES = Aes.Create();
+        aes = Aes.Create();
 
         // Needs more salt, will add some salt later
 
@@ -30,22 +30,26 @@ class AES
         byte[] passwordBytes = UE.GetBytes(pass);
         byte[] aesKey = SHA256Managed.Create().ComputeHash(passwordBytes);
         byte[] aesIV = MD5.Create().ComputeHash(passwordBytes);
-        AES.Key = aesKey;
-        AES.IV = aesIV;
-        AES.Mode = CipherMode.CBC;
-        AES.Padding = PaddingMode.PKCS7;
+        aes.Key = aesKey;
+        aes.IV = aesIV;
+        aes.Mode = CipherMode.CBC;
+        aes.Padding = PaddingMode.PKCS7;
 
         // Check if bad
-        secret = GetWaspFactory();
-        if (!string.Equals(BitConverter.ToString(AES.Key), secret))
+        secret = GetWaspFactory(aes);
+        Console.WriteLine("GetWaspFactory returned: ");
+        Console.WriteLine(secret);
+        Console.WriteLine("\n" + BitConverter.ToString(aes.Key));
+        if (!string.Equals(BitConverter.ToString(aes.Key), secret))
         {
             Console.WriteLine("Bad admin password");
-            AES.Clear();
+            aes.Clear();
             return false;
         }
         else
         {
             Console.WriteLine("Good admin password");
+            aes.Clear();
             return true;
         }
     }
@@ -74,16 +78,22 @@ class AES
 
 
     // Returns the wasp from the factory
-    private string GetWaspFactory()
+    private string GetWaspFactory(Aes key)
     {
         XmlDocument xmlDoc = new XmlDocument();
         xmlDoc.Load("Vault.xml");
-        XmlNode elem = xmlDoc.SelectSingleNode("/User/WaspFactory");
 
-        if (elem == null)
+        try
         {
-            Console.WriteLine("elem is NULL");
+            Decrypt(xmlDoc, key);
+        } 
+        catch (Exception e) 
+        {
+            Console.WriteLine(e.Message);
+            return "";
         }
+        XmlNode elem = xmlDoc.SelectSingleNode("/User/WaspFactory");
+        Encrypt(xmlDoc, "User", key);
 
         return elem.InnerText;
     }
