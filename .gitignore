@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/PasswordVault/PasswordVault/bin/Debug
+/PasswordVault/PasswordVault/obj
+/.vs
+/PasswordVault/.vs/PasswordVault/v16
