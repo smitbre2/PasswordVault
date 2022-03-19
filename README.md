@@ -8,5 +8,3 @@ Such as:
    - User settings pertaining to application use and behaviors
    - Form settings like auto-hide and keep-on-top
    - Extra salting and encryption of the factory, as it is currently just a hash
-
-I also plan to do some code analysis eventually to make sure I didn't miss any glaring errors.
