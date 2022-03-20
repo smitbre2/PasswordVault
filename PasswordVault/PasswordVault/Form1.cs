@@ -22,16 +22,19 @@ namespace PasswordVault
         // When authenticated it hides and opens up the "MainForm" that will house data
         public Form1()
         {
-            InitializeComponent();
 
-            // Check if vault even exists, if not grab a new admin key and store away hashed with data
-            // This will have to be its own encrypted element
+            // First Time Use can make closing the application at start tricky
             if (IsFirstTimeUse())
             {
-                Console.WriteLine("Is first time use");
-                FirstTimeSetup();
+                // A false response is our queue to close shop
+                var firstTimeSetupResult = FirstTimeSetup();
+                
+                if (firstTimeSetupResult == false)
+                {
+                    Environment.Exit(0);
+                } 
             }
-            
+            InitializeComponent();           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -130,12 +133,19 @@ namespace PasswordVault
 
 
         // First time setup includes taking in the admin password and hashing into the xml
-        private void FirstTimeSetup()
+        // Returns true on succesful initialization, false if no key is provided
+        private bool FirstTimeSetup()
         {
             // Alert user to happenings and prompt for an adminstrator password
             FirstStartupForm fsForm = new FirstStartupForm();
             fsForm.ShowDialog();
             string userOutput = fsForm.newPass;
+
+            // Check if user is trying to exit application
+            if (string.IsNullOrEmpty(userOutput) )
+            {
+                return false;
+            }
 
             // Create the Vault xml file
             XDocument xmlDoc = new XDocument();
@@ -158,6 +168,7 @@ namespace PasswordVault
             AES.Encrypt(ConvertToXMLDocument(xmlDoc),
                         "User",
                         KEY_WRAPPER.GetKey(userOutput));
+            return true;
         }
 
        
@@ -173,7 +184,6 @@ namespace PasswordVault
                 return xmlDoc;
             }
         } 
-
     }
 }
 
