@@ -49,7 +49,6 @@ namespace PasswordVault
             // Authenticate the login credentials
             if ( KEY_WRAPPER.AuthLogin(textBox1.Text) )
             {
-                Console.WriteLine("Good password");
                 // Open next form password is good
                 this.Hide();
                 MFK = textBox1.Text;
@@ -85,14 +84,7 @@ namespace PasswordVault
 
 
             // Out with old in with new
-            xmlDoc.Descendants("Logins").Descendants().Remove();
-  
-            if (workElem == null)
-            {
-                // If we get here I fucked up with xml schema
-                Console.WriteLine("Logins was not found in vault");
-
-            }
+            xmlDoc.Descendants("Logins").Descendants().Remove();    
 
             // Create list of elements in regards to data and format
             XElement root;

@@ -16,7 +16,6 @@ class AES
     // Authenticates the provided password. Returns true if it is the correct key, false otherwise
     public bool AuthLogin(string pass)
     {
-        Console.WriteLine(path);
         Aes aes = null;
 
         // Create a new AES key.
@@ -37,18 +36,13 @@ class AES
 
         // Check if bad
         secret = GetWaspFactory(aes);
-        Console.WriteLine("GetWaspFactory returned: ");
-        Console.WriteLine(secret);
-        Console.WriteLine("\n" + BitConverter.ToString(aes.Key));
         if (!string.Equals(BitConverter.ToString(aes.Key), secret))
         {
-            Console.WriteLine("Bad admin password");
             aes.Clear();
             return false;
         }
         else
         {
-            Console.WriteLine("Good admin password");
             aes.Clear();
             return true;
         }
@@ -89,7 +83,6 @@ class AES
         } 
         catch (Exception e) 
         {
-            Console.WriteLine(e.Message);
             return "";
         }
         XmlNode elem = xmlDoc.SelectSingleNode("/User/WaspFactory");
