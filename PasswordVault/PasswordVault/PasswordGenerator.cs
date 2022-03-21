@@ -8,8 +8,10 @@ namespace PasswordVault
         {
             string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
             string numbers = "0123456789";
-            string special = "!@#$%^&*()-_=+<,>.";
-            string allChars = letters + numbers + special;
+            char    quote = '"';
+            string special  = "!@#$%^&*()-_=+<,>.:;`~{}|[]/\\";
+
+            string allChars = letters + numbers + quote + special;
 
             // Generate some randomness
             byte[] rand = new byte[passwordLength];
