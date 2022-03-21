@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace PasswordVault
@@ -10,7 +10,7 @@ namespace PasswordVault
         public string urlReturn { get; set; }
         public string usernameReturn { get; set; }
         public string passwordReturn { get; set; }
-
+        private PasswordGenerator gen = new PasswordGenerator();
 
         public AddLoginForm()
         {
@@ -57,10 +57,10 @@ namespace PasswordVault
         }
 
 
-        // TODO
+        // Generate a secure random password
         private void createPasswordBtn_Click(object sender, EventArgs e)
         {
-            // Generate a secure random password
+            passwordTB.Text = gen.GeneratePassword((int)passwordLengthTB.Value);
         }
     }
 }
