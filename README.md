@@ -7,7 +7,7 @@ Visual Studio will probably yell at you about needing a certain .NET installatio
 ## Plans
 I have quite a few plans for QoL features and standard implementations. 
 Such as:
-   - Cryptographically secure password generation
+   - ~~Cryptographically secure password generation~~
    - User settings pertaining to application use and behaviors
    - Form settings like auto-hide and keep-on-top
    - Extra salting of the factory
