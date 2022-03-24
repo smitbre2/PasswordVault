@@ -17,15 +17,17 @@ namespace PasswordVault
             // Deletion should only be available when an entry is selected
             deleteBtn.Enabled = false;
 
-            // Link programmatic handler
+            // Link programmatic handlers
             dataGridView1.MouseClick += DataGridView1_MouseClick;
             dataGridView1.ColumnHeaderMouseClick += DataGridView1_ColumnHeaderMouseClick1;
 
-            // First time use of table
+            // Create the table headers and columns
             dataGridView1.ColumnCount = 3;
             dataGridView1.Columns[0].Name = "Website URL";
             dataGridView1.Columns[1].Name = "Username";
             dataGridView1.Columns[2].Name = "Password";
+
+            ApplyUserSettings();
 
             // Read in encrypted data and decode for the table
             PopulateDataGridView();
@@ -111,6 +113,28 @@ namespace PasswordVault
         }
 
 
+        private void ApplyUserSettings()
+        {
+            // Apply user settings
+            this.Size = Properties.Settings.Default.MainScreenResolution;
+            dataGridView1.BackgroundColor = Properties.Settings.Default.MainScreenBackgroundColor;
+            dataGridView1.ForeColor = Properties.Settings.Default.DataTextColor;
+            dataGridView1.GridColor = Properties.Settings.Default.DataGridColor;
+
+            // Selection Colors
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Properties.Settings.Default.DataSelectionBackgroundColor;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Properties.Settings.Default.DataSelectionTextColor;
+
+            // Needed to prevent color override
+            dataGridView1.RowHeadersDefaultCellStyle.SelectionBackColor = System.Drawing.Color.Empty;
+
+            // BackgroundColor for all rows
+            dataGridView1.RowsDefaultCellStyle.BackColor = Properties.Settings.Default.DataCellBackgroundColor;
+
+            // Font type size
+            dataGridView1.DefaultCellStyle.Font = Properties.Settings.Default.DataFont;
+        }
+
         // Grab vault and populate the datagridview
         private void PopulateDataGridView()
         {
@@ -138,8 +162,6 @@ namespace PasswordVault
             AES.Encrypt(xmlDoc, "User", aes);
             aes.Clear();
         }
-
-
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {

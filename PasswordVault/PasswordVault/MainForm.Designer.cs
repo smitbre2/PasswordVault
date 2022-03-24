@@ -56,7 +56,7 @@ namespace PasswordVault
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(425, 371);
+            this.dataGridView1.Size = new System.Drawing.Size(424, 382);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView1_CellMouseDown);
             // 
@@ -69,7 +69,7 @@ namespace PasswordVault
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(425, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(424, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -96,9 +96,9 @@ namespace PasswordVault
             // 
             this.addLoginBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.addLoginBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.addLoginBtn.Location = new System.Drawing.Point(0, 396);
+            this.addLoginBtn.Location = new System.Drawing.Point(0, 407);
             this.addLoginBtn.Name = "addLoginBtn";
-            this.addLoginBtn.Size = new System.Drawing.Size(425, 27);
+            this.addLoginBtn.Size = new System.Drawing.Size(424, 27);
             this.addLoginBtn.TabIndex = 2;
             this.addLoginBtn.Text = "Add Login";
             this.addLoginBtn.UseVisualStyleBackColor = true;
@@ -108,9 +108,9 @@ namespace PasswordVault
             // 
             this.deleteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.deleteBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.deleteBtn.Location = new System.Drawing.Point(0, 423);
+            this.deleteBtn.Location = new System.Drawing.Point(0, 434);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(425, 27);
+            this.deleteBtn.Size = new System.Drawing.Size(424, 27);
             this.deleteBtn.TabIndex = 3;
             this.deleteBtn.Text = "Delete Selected Entry";
             this.deleteBtn.UseVisualStyleBackColor = true;
@@ -124,7 +124,7 @@ namespace PasswordVault
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 450);
+            this.ClientSize = new System.Drawing.Size(424, 461);
             this.Controls.Add(this.addLoginBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.dataGridView1);

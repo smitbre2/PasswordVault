@@ -1,7 +1,45 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PasswordVault.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PasswordLength" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="PasswordGeneratorAlphabet" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"!@#$%^&amp;*()-_=+&lt;,&gt;.:;`~{}|[]/\\</Value>
+    </Setting>
+    <Setting Name="CopySelectedCellToClipboard" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MainScreenResolution" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">400, 500</Value>
+    </Setting>
+    <Setting Name="LoginScreenBackgroundColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">ControlDark</Value>
+    </Setting>
+    <Setting Name="MainScreenBackgroundColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">AppWorkspace</Value>
+    </Setting>
+    <Setting Name="DataGridColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="DataBackgroundColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">AppWorkspace</Value>
+    </Setting>
+    <Setting Name="DataTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">ControlText</Value>
+    </Setting>
+    <Setting Name="DataSelectionBackgroundColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">GradientActiveCaption</Value>
+    </Setting>
+    <Setting Name="DataSelectionTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="DataCellBackgroundColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="DataFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Microsoft Sans Serif, 9.75pt</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

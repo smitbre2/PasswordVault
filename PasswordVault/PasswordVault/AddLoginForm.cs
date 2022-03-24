@@ -15,6 +15,7 @@ namespace PasswordVault
         public AddLoginForm()
         {
             InitializeComponent();
+            this.passwordLengthTB.Value = Properties.Settings.Default.PasswordLength;
         }
 
 

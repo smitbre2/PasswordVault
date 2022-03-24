@@ -6,12 +6,7 @@ namespace PasswordVault
     {
         public string GeneratePassword(int passwordLength)
         {
-            string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-            string numbers = "0123456789";
-            char    quote = '"';
-            string special  = "!@#$%^&*()-_=+<,>.:;`~{}|[]/\\";
-
-            string allChars = letters + numbers + quote + special;
+            string allChars = Properties.Settings.Default.PasswordGeneratorAlphabet;
 
             // Generate some randomness
             byte[] rand = new byte[passwordLength];

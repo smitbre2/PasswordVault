@@ -8,21 +8,175 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-namespace PasswordVault.Properties
-{
+namespace PasswordVault.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("12")]
+        public int PasswordLength {
+            get {
+                return ((int)(this["PasswordLength"]));
+            }
+            set {
+                this["PasswordLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\"!@#$%^&*()-_=+<,>." +
+            ":;`~{}|[]/\\\\")]
+        public string PasswordGeneratorAlphabet {
+            get {
+                return ((string)(this["PasswordGeneratorAlphabet"]));
+            }
+            set {
+                this["PasswordGeneratorAlphabet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CopySelectedCellToClipboard {
+            get {
+                return ((bool)(this["CopySelectedCellToClipboard"]));
+            }
+            set {
+                this["CopySelectedCellToClipboard"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("400, 500")]
+        public global::System.Drawing.Size MainScreenResolution {
+            get {
+                return ((global::System.Drawing.Size)(this["MainScreenResolution"]));
+            }
+            set {
+                this["MainScreenResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ControlDark")]
+        public global::System.Drawing.Color LoginScreenBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["LoginScreenBackgroundColor"]));
+            }
+            set {
+                this["LoginScreenBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("AppWorkspace")]
+        public global::System.Drawing.Color MainScreenBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["MainScreenBackgroundColor"]));
+            }
+            set {
+                this["MainScreenBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color DataGridColor {
+            get {
+                return ((global::System.Drawing.Color)(this["DataGridColor"]));
+            }
+            set {
+                this["DataGridColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("AppWorkspace")]
+        public global::System.Drawing.Color DataBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["DataBackgroundColor"]));
+            }
+            set {
+                this["DataBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ControlText")]
+        public global::System.Drawing.Color DataTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["DataTextColor"]));
+            }
+            set {
+                this["DataTextColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("GradientActiveCaption")]
+        public global::System.Drawing.Color DataSelectionBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["DataSelectionBackgroundColor"]));
+            }
+            set {
+                this["DataSelectionBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color DataSelectionTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["DataSelectionTextColor"]));
+            }
+            set {
+                this["DataSelectionTextColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color DataCellBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["DataCellBackgroundColor"]));
+            }
+            set {
+                this["DataCellBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft Sans Serif, 9.75pt")]
+        public global::System.Drawing.Font DataFont {
+            get {
+                return ((global::System.Drawing.Font)(this["DataFont"]));
+            }
+            set {
+                this["DataFont"] = value;
             }
         }
     }
