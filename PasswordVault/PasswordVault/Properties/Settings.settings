@@ -23,9 +23,6 @@
     <Setting Name="DataGridColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Black</Value>
     </Setting>
-    <Setting Name="DataBackgroundColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">AppWorkspace</Value>
-    </Setting>
     <Setting Name="DataTextColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">ControlText</Value>
     </Setting>

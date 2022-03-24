@@ -110,18 +110,6 @@ namespace PasswordVault.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("AppWorkspace")]
-        public global::System.Drawing.Color DataBackgroundColor {
-            get {
-                return ((global::System.Drawing.Color)(this["DataBackgroundColor"]));
-            }
-            set {
-                this["DataBackgroundColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("ControlText")]
         public global::System.Drawing.Color DataTextColor {
             get {

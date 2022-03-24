@@ -165,9 +165,16 @@ namespace PasswordVault
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("PasswordVault utilizes fun things like SHA256, MD5, PKCS7 to achieve an AES that securely stores your login details.\n\n\t\tCurrent Version 0.3.0",
+            MessageBox.Show("PasswordVault utilizes fun things like SHA256, MD5, PKCS7 to achieve an AES that securely stores your login details.\n\n\t\tCurrent Version 0.4.1",
                             "About PasswordVault",
                             MessageBoxButtons.OK);
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Bring up settings form for the user
+            SettingsForm settings = new SettingsForm();
+            settings.ShowDialog();
         }
     }
 }
