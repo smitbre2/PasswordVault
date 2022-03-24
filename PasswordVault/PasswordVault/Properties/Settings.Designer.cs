@@ -62,13 +62,13 @@ namespace PasswordVault.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("400, 500")]
-        public global::System.Drawing.Size MainScreenResolution {
+        [global::System.Configuration.DefaultSettingValueAttribute("400")]
+        public int MainScreenResolutionX {
             get {
-                return ((global::System.Drawing.Size)(this["MainScreenResolution"]));
+                return ((int)(this["MainScreenResolutionX"]));
             }
             set {
-                this["MainScreenResolution"] = value;
+                this["MainScreenResolutionX"] = value;
             }
         }
         
@@ -165,6 +165,18 @@ namespace PasswordVault.Properties {
             }
             set {
                 this["DataFont"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("500")]
+        public int MainScreenResolutionY {
+            get {
+                return ((int)(this["MainScreenResolutionY"]));
+            }
+            set {
+                this["MainScreenResolutionY"] = value;
             }
         }
     }

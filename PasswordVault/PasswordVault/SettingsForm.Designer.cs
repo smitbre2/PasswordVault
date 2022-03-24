@@ -267,6 +267,7 @@ namespace PasswordVault
             this.passwordLengthTB.Name = "passwordLengthTB";
             this.passwordLengthTB.Size = new System.Drawing.Size(120, 20);
             this.passwordLengthTB.TabIndex = 2;
+            this.passwordLengthTB.ValueChanged += new System.EventHandler(this.passwordLengthTB_ValueChanged);
             // 
             // passwordAlphabetTB
             // 
@@ -276,6 +277,7 @@ namespace PasswordVault
             this.passwordAlphabetTB.Name = "passwordAlphabetTB";
             this.passwordAlphabetTB.Size = new System.Drawing.Size(243, 77);
             this.passwordAlphabetTB.TabIndex = 3;
+            this.passwordAlphabetTB.TextChanged += new System.EventHandler(this.passwordAlphabetTB_TextChanged);
             // 
             // label7
             // 
@@ -290,16 +292,48 @@ namespace PasswordVault
             // xResolutionTB
             // 
             this.xResolutionTB.Location = new System.Drawing.Point(108, 3);
+            this.xResolutionTB.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.xResolutionTB.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.xResolutionTB.Name = "xResolutionTB";
             this.xResolutionTB.Size = new System.Drawing.Size(120, 20);
             this.xResolutionTB.TabIndex = 11;
+            this.xResolutionTB.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.xResolutionTB.ValueChanged += new System.EventHandler(this.xResolutionTB_ValueChanged);
             // 
             // yResolutionTB
             // 
             this.yResolutionTB.Location = new System.Drawing.Point(108, 32);
+            this.yResolutionTB.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.yResolutionTB.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.yResolutionTB.Name = "yResolutionTB";
             this.yResolutionTB.Size = new System.Drawing.Size(120, 20);
             this.yResolutionTB.TabIndex = 12;
+            this.yResolutionTB.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.yResolutionTB.ValueChanged += new System.EventHandler(this.yResolutionTB_ValueChanged);
             // 
             // gridColorBtn
             // 

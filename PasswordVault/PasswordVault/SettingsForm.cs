@@ -15,6 +15,13 @@ namespace PasswordVault
         public SettingsForm()
         {
             InitializeComponent();
+            passwordLengthTB.Value = Properties.Settings.Default.PasswordLength;
+            passwordAlphabetTB.Text = Properties.Settings.Default.PasswordGeneratorAlphabet;
+
+            xResolutionTB.Value = Properties.Settings.Default.MainScreenResolutionX;
+            yResolutionTB.Value = Properties.Settings.Default.MainScreenResolutionY;
+
+
         }
 
         private void backgroundColorBtn_Click(object sender, EventArgs e)
@@ -90,6 +97,30 @@ namespace PasswordVault
         {
             Properties.Settings.Default.Save();
             this.Close();
+        }
+
+        private void passwordAlphabetTB_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.PasswordGeneratorAlphabet =
+                passwordAlphabetTB.Text;
+        }
+
+        private void passwordLengthTB_ValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.PasswordLength =
+                (int)passwordLengthTB.Value;
+        }
+
+        private void xResolutionTB_ValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.MainScreenResolutionX =
+                (int)xResolutionTB.Value;
+        }
+
+        private void yResolutionTB_ValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.MainScreenResolutionY =
+                (int)yResolutionTB.Value;
         }
     }
 }

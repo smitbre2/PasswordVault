@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace PasswordVault
 {
@@ -116,7 +117,8 @@ namespace PasswordVault
         private void ApplyUserSettings()
         {
             // Apply user settings
-            this.Size = Properties.Settings.Default.MainScreenResolution;
+            this.Size = new Size(Properties.Settings.Default.MainScreenResolutionX,
+                                 Properties.Settings.Default.MainScreenResolutionY);
             dataGridView1.BackgroundColor = Properties.Settings.Default.MainScreenBackgroundColor;
             dataGridView1.ForeColor = Properties.Settings.Default.DataTextColor;
             dataGridView1.GridColor = Properties.Settings.Default.DataGridColor;
@@ -165,7 +167,7 @@ namespace PasswordVault
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("PasswordVault utilizes fun things like SHA256, MD5, PKCS7 to achieve an AES that securely stores your login details.\n\n\t\tCurrent Version 0.4.1",
+            MessageBox.Show("PasswordVault utilizes fun things like SHA256, MD5, PKCS7 to achieve an AES that securely stores your login details.\n\n\t\tCurrent Version 0.4.3",
                             "About PasswordVault",
                             MessageBoxButtons.OK);
         }

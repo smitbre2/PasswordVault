@@ -11,8 +11,8 @@
     <Setting Name="CopySelectedCellToClipboard" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="MainScreenResolution" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">400, 500</Value>
+    <Setting Name="MainScreenResolutionX" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">400</Value>
     </Setting>
     <Setting Name="LoginScreenBackgroundColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">ControlDark</Value>
@@ -37,6 +37,9 @@
     </Setting>
     <Setting Name="DataFont" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">Microsoft Sans Serif, 9.75pt</Value>
+    </Setting>
+    <Setting Name="MainScreenResolutionY" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">500</Value>
     </Setting>
   </Settings>
 </SettingsFile>
