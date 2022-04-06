@@ -11,4 +11,4 @@ Such as:
    - ~~User settings pertaining to application use and behaviors~~
    - ~~Fun settings like customizeable window colors~~
    - Form settings like auto-hide and keep-on-top
-   - Extra salting of the factory
+   - Utilize salt ****and**** pepper for encryption
