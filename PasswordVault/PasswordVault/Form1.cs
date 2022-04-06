@@ -74,18 +74,19 @@ namespace PasswordVault
         private void SaveDataFromDGV(DataGridView dgv)
         {
             Aes aes = KEY_WRAPPER.GetKey(MFK);
-            XDocument xmlDoc = XDocument.Load("Vault.xml");
+            XDocument xDoc = XDocument.Load("Vault.xml");
 
             // Now open text
-            AES.Decrypt(ConvertToXMLDocument(xmlDoc), aes);
+            XmlDocument xmlDoc = DocumentExtensions.ToXmlDocument(xDoc);
+            AES.Decrypt(ref xmlDoc, aes);
 
             // Reopen since the handle as technically been closed. This open statement must be here
-            xmlDoc = XDocument.Load("Vault.xml");
-            XElement workElem = xmlDoc.Element("User").Element("Logins");   // Index to replace
+            xDoc = DocumentExtensions.ToXDocument(xmlDoc);
+            XElement workElem = xDoc.Element("User").Element("Logins");   // Index to replace
 
 
             // Out with old in with new
-            xmlDoc.Descendants("Logins").Descendants().Remove();    
+            xDoc.Descendants("Logins").Descendants().Remove();    
 
             // Create list of elements in regards to data and format
             XElement root;
@@ -107,11 +108,11 @@ namespace PasswordVault
                 root.Add(url);
                 root.Add(user);
                 root.Add(pass);
-                xmlDoc.Element("User").Element("Logins").Add(root);
+                xDoc.Element("User").Element("Logins").Add(root);
             }
 
             // Call encrypt
-            AES.Encrypt(ConvertToXMLDocument(xmlDoc),
+            AES.Encrypt(DocumentExtensions.ToXmlDocument(xDoc),
                           "User",
                           aes);
             aes.Clear();
@@ -158,25 +159,11 @@ namespace PasswordVault
             xmlDoc.Add(root);
 
             // Save file
-            AES.Encrypt(ConvertToXMLDocument(xmlDoc),
+            AES.Encrypt(DocumentExtensions.ToXmlDocument(xmlDoc),
                         "User",
                         KEY_WRAPPER.GetKey(userOutput));
             return true;
         }
-
-       
-        // I played with fire and used multiple Xml handling containers
-        // To help extinguish myself and nullify my need to rewrite Encrypt/Decrypt,
-        // I have created this auxillary method to quickly convert from Linq to System.Xml
-        private static XmlDocument ConvertToXMLDocument(XDocument input)
-        {
-            XmlDocument xmlDoc = new XmlDocument();
-            using (var xmlReader = input.CreateReader())
-            {
-                xmlDoc.Load(xmlReader);
-                return xmlDoc;
-            }
-        } 
     }
 }
 

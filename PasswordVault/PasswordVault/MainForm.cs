@@ -146,7 +146,7 @@ namespace PasswordVault
 
             // Generate aes and Decrypt
             var aes = KEY_WRAPPER.GetKey(MFK);
-            AES.Decrypt(xmlDoc, aes);
+            AES.Decrypt(ref xmlDoc, aes);
 
             // Try and find the login information to add to table
             var node = xmlDoc.SelectNodes("/User/Logins/Login"); 

@@ -79,7 +79,7 @@ class AES
 
         try
         {
-            Decrypt(xmlDoc, key);
+            Decrypt(ref xmlDoc, key);
         } 
         catch (Exception e) 
         {
@@ -149,7 +149,7 @@ class AES
 
     // Decrypt the passed xml document with the given key. Will fail if the wrong key is supplied.
     // An incorect key can cause a padding exception to raise
-    public static void Decrypt(XmlDocument Doc, SymmetricAlgorithm Alg)
+    public static void Decrypt(ref XmlDocument Doc, SymmetricAlgorithm Alg)
     {
         // Check the arguments.
         if (Doc == null)
@@ -178,8 +178,5 @@ class AES
 
         // Replace the encryptedData element with the plaintext XML element.
         exml.ReplaceData(encryptedElement, rgbOutput);
-
-        // Save
-        Doc.Save("Vault.xml");
     }
 }
